@@ -1,0 +1,5 @@
+= paani
+
+Generate this with
+    paani rdoc
+After you have described your command line interface
