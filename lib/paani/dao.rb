@@ -20,7 +20,9 @@ class Dao
   end
 
   def list_water_samples
-  	puts water_samples.all
+  	results = []
+  	water_samples.all.each { |w| results << WaterSample.new(w)}
+  	results
   end
 
   def find_water_sample(id)
@@ -33,7 +35,9 @@ class Dao
   end
 
   def list_factor_weights
-  	puts factor_weights.all
+  	results = []
+  	factor_weights.all.each { |w| results << FactorWeight.new(w)}
+  	results
   end
 
   def find_factor_weight(id)

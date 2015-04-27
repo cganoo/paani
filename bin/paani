@@ -28,12 +28,12 @@ arg_name 'The name of the argument'
 flag [:f,:flagname]
 
 desc 'Describe find here'
-arg_name 'id'
+arg_name 'water_sample_id'
 command :find do |c|
   c.action do |global_options,options,args|
-  	id = args.shift
+  	water_sample_id = args.shift
     dao = Dao.new
-    ws = dao.find_water_sample(id)
+    ws = dao.find_water_sample(water_sample_id)
     puts ws
    	end
 end
@@ -60,10 +60,21 @@ command :factor do |c|
 end
 
 desc 'Describe to_hash here'
-arg_name 'Describe arguments to to_hash here'
+arg_name 'water_sample_id'
 command :to_hash do |c|
+	c.desc 'Include factors'
+  c.switch [:i]
   c.action do |global_options,options,args|
-    puts "to_hash command ran"
+  	include_factors = options[:i]
+  	water_sample_id = args.shift
+    dao = Dao.new
+    ws = dao.find_water_sample(water_sample_id)
+    if ws
+    		fws = dao.list_factor_weights
+    		puts ws.to_hash(include_factors, fws)
+    else
+    		puts "Specified water_sample_id [#{water_sample_id}] does not match any known water sample"
+    end
   end
 end
 
