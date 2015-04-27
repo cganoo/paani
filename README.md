@@ -13,6 +13,7 @@ Following are essential:
 * [Git](http://git-scm.com/downloads)
 * [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
 * [Bundler](http://bundler.io/)
+* [MySQL](https://www.mysql.com/)
 
 ### Get the source from Github
 
@@ -22,7 +23,12 @@ Following are essential:
 
 ### Prepare your data
 
-1. TODO 
+1. We will work with the provided MySQL dump.
+2. Note: It is easy to use sqllite or other databases with this dump, but currently only MySQL is being supported in this app.
+3. If you are using a mac and have installed mysql through brew, then adding the following aliases will make your life easier: `alias mysql.start='/usr/local/Cellar/mysql/<version>/support-files/mysql.server start'` and `alias mysql.stop='/usr/local/Cellar/mysql/<version>/support-files/mysql.server stop'`
+4. Its also nice to use a GUI tool to view our data. My favorite on a mac is [Querious](http://www.araelium.com/querious/)
+5. Once you are setup with your MySQL toolchain, start the MySQL server and import the MySQL dump into the `test` database
+6. Run a few SQL queries against the 2 tables (`factor_weights` and `water_samples`) to see if the data matches what you expect from the dump.
 
 ### Explore available commands
 
