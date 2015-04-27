@@ -32,21 +32,30 @@ arg_name 'id'
 command :find do |c|
   c.action do |global_options,options,args|
   	id = args.shift
-    # Your command logic here
-    ws = WaterSample.new
-    ws.find(id)
-
-    # If you have any errors, just raise them
-    # raise "that command made no sense"
-
+    dao = Dao.new
+    ws = dao.find_water_sample(id)
+    puts ws
    	end
 end
 
 desc 'Describe factor here'
-arg_name 'Describe arguments to factor here'
+arg_name 'water_sample_id factor_weight_id'
 command :factor do |c|
   c.action do |global_options,options,args|
-    puts "factor command ran"
+    water_sample_id = args.shift
+    factor_weight_id = args.shift
+    dao = Dao.new
+    fw = dao.find_factor_weight(factor_weight_id)
+    if fw
+    	ws = dao.find_water_sample(water_sample_id)
+    	if ws
+    		puts ws.factor(fw)
+    	else
+    		puts "Specified water_sample_id [#{water_sample_id}] does not match any known water sample"
+    	end
+    else
+    	puts "Specified factor_weight_id [#{factor_weight_id}] does not match any known factor weight"
+    end
   end
 end
 

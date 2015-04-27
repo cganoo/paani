@@ -30,20 +30,32 @@ GEM
     gli (2.13.0)
     multi_json (1.11.0)
     multi_test (0.1.2)
-    mysql (2.9.1)
+    mysql2 (0.3.18)
     rake (10.4.2)
     rdoc (4.2.0)
+    rspec (3.2.0)
+      rspec-core (~> 3.2.0)
+      rspec-expectations (~> 3.2.0)
+      rspec-mocks (~> 3.2.0)
+    rspec-core (3.2.3)
+      rspec-support (~> 3.2.0)
     rspec-expectations (3.2.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
+    rspec-mocks (3.2.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
+    sequel (4.21.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   aruba
-  mysql (~> 2.9.1)
+  mysql2 (= 0.3.18)
   paani!
-  rake
+  rake (= 10.4.2)
   rdoc
+  rspec (= 3.2.0)
+  sequel (= 4.21.0)
