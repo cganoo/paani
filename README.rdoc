@@ -1,6 +1,0 @@
-= paani
-
-Describe your project here
-
-:include:paani.rdoc
-
