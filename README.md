@@ -41,7 +41,12 @@ Following are essential:
 
 ### Highlights
 
-* <b>TODO</b>: TODO
+The aim of this toy project is to learn more about Ruby. Hence I chose to not turn this into a Ruby on Rails (RoR) project.
+
+However we still need some sort of user-interaction layer for this app (cmdline, GUI etc) and a db-interaction layer to talk with our database (and hopefully abstract away thread-safety, connection pooling etc). With thse goals in mind, the follwoing 2 libraries were chosen:
+
+* <b>[GLI](https://github.com/davetron5000/gli)</b>: Scaffolding to easily provide cmdline interaction for this app
+* <b>[Sequel](https://github.com/jeremyevans/sequel)</b>: Chosen as an easy-to-use ORM layer for this app
 
 ### License
 
